@@ -86,5 +86,3 @@ El repositorio debe llamarse exactamente:
 ```text
 Taller_fe_MatosGuando
 ```
-
-Consulta los comandos completos en [GUIÓN_VIDEO_Y_GITHUB.md](GUIÓN_VIDEO_Y_GITHUB.md).
