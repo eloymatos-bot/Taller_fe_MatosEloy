@@ -1,0 +1,41 @@
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+	<div class="hero-grid container">
+		<div class="hero-copy">
+			<p class="eyebrow"><span></span>{{ eyebrow }}</p>
+			<h1 id="hero-title">{{ title }}</h1>
+			<p class="hero-description">{{ description }}</p>
+
+			<div class="hero-actions">
+				<a class="button button-primary" href="#productos">{{ primaryCta }} <span aria-hidden="true">↗</span></a>
+				<a class="button button-ghost" href="#nosotros">{{ secondaryCta }}</a>
+			</div>
+
+			<div class="hero-stats">
+				@for (stat of stats; track stat.id) {
+					<div class="stat">
+						<strong>{{ stat.value }}</strong>
+						<span>{{ stat.label }}</span>
+					</div>
+				}
+			</div>
+		</div>
+
+		<div class="hero-visual" aria-label="Ilustración abstracta de un setup gamer">
+			<div class="visual-grid"></div>
+			<div class="visual-glow"></div>
+			<div class="visual-console">
+				<span class="visual-index">{{ visualLabel }}</span>
+				<div class="visual-orbit orbit-one"></div>
+				<div class="visual-orbit orbit-two"></div>
+				<div class="visual-core">N<span>+</span></div>
+				<div class="visual-caption">
+					<span>{{ visualTitle }}</span>
+					<strong>PLAY / FOCUS / WIN</strong>
+				</div>
+			</div>
+			<span class="visual-chip chip-top">FPS <strong>240</strong></span>
+			<span class="visual-chip chip-bottom">LATENCY <strong>08 MS</strong></span>
+		</div>
+	</div>
+</section>
+<p>hero works!</p>

@@ -1,0 +1,20 @@
+<section class="about section-shell" id="nosotros" aria-labelledby="about-title">
+	<div class="about-grid container">
+		<div class="about-intro">
+			<p class="eyebrow"><span></span>{{ eyebrow }}</p>
+			<h2 id="about-title">{{ titulo }}</h2>
+			<p class="about-description">{{ descripcion }}</p>
+			<a class="text-link" href="#contacto">Habla con nuestro equipo <span aria-hidden="true">↗</span></a>
+		</div>
+
+		<div class="facts-grid">
+			@for (dato of datos; track dato.id) {
+				<article class="fact">
+					<strong>{{ dato.valor }}</strong>
+					<span>{{ dato.label }}</span>
+				</article>
+			}
+		</div>
+	</div>
+</section>
+<p>nosotros works!</p>

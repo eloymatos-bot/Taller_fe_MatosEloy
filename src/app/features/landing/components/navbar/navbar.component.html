@@ -1,0 +1,36 @@
+<header class="site-header">
+	<nav class="navbar container" aria-label="Navegación principal">
+		<a class="brand" href="#inicio" (click)="cerrarMenu()" aria-label="Ir al inicio de Nexus Gamer">
+			<span class="brand-mark">N</span>
+			<span class="brand-copy">
+				<strong>{{ nombreMarca }}</strong>
+				<small>{{ ubicacion }}</small>
+			</span>
+		</a>
+
+		<button
+			class="menu-toggle"
+			type="button"
+			[attr.aria-expanded]="menuAbierto"
+			aria-label="Abrir menú de navegación"
+			(click)="alternarMenu()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<div class="nav-panel" [class.is-open]="menuAbierto">
+			<ul class="nav-links">
+				@for (enlace of enlaces; track enlace.id) {
+					<li>
+						<a [href]="enlace.target" (click)="cerrarMenu()">{{ enlace.label }}</a>
+					</li>
+				}
+			</ul>
+			<a class="nav-cta" href="#productos" (click)="cerrarMenu()">
+				Explorar tienda <span aria-hidden="true">↗</span>
+			</a>
+		</div>
+	</nav>
+</header>
+<p>navbar works!</p>

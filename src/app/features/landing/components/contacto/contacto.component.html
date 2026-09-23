@@ -1,0 +1,28 @@
+<section class="contact section-shell" id="contacto" aria-labelledby="contact-title">
+	<div class="contact-grid container">
+		<div class="contact-copy">
+			<p class="eyebrow"><span></span>{{ eyebrow }}</p>
+			<h2 id="contact-title">{{ titulo }}</h2>
+			<p>{{ descripcion }}</p>
+			<div class="contact-details">
+				<a href="mailto:hola@nexusgamer.pe"><span>Correo</span>{{ correo }}</a>
+				<a href="tel:+51945620318"><span>WhatsApp</span>{{ telefono }}</a>
+				<span><span>Horario</span>{{ horario }}</span>
+			</div>
+		</div>
+
+		<form class="contact-form" (submit)="enviarConsulta($event)">
+			<label for="nombre">Tu nombre</label>
+			<input id="nombre" name="nombre" type="text" placeholder="Eloy Francesco" required>
+			<label for="email">Correo electrónico</label>
+			<input id="email" name="email" type="email" placeholder="tu@correo.com" required>
+			<label for="consulta">¿Qué necesitas mejorar?</label>
+			<textarea id="consulta" name="consulta" rows="4" placeholder="Cuéntanos sobre tu setup..." required></textarea>
+			<button class="button button-primary" type="submit">Enviar consulta <span aria-hidden="true">↗</span></button>
+			@if (mensajeEnviado) {
+				<p class="success-message" role="status">¡Recibido! Te contactaremos pronto.</p>
+			}
+		</form>
+	</div>
+</section>
+<p>contacto works!</p>

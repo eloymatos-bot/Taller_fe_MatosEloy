@@ -1,0 +1,31 @@
+<section class="products section-shell" id="productos" aria-labelledby="products-title">
+	<div class="section-heading container">
+		<div>
+			<p class="eyebrow"><span></span>{{ eyebrow }}</p>
+			<h2 id="products-title">{{ titulo }}</h2>
+		</div>
+		<p class="section-description">{{ descripcion }}</p>
+	</div>
+
+	<div class="products-grid container">
+		@for (producto of productos; track producto.id) {
+			<article class="product-card" [class.featured]="producto.id === 1">
+				<div class="product-art">
+					<span class="product-tag">{{ producto.etiqueta }}</span>
+					<span class="product-icon" aria-hidden="true">{{ producto.icono }}</span>
+					<span class="product-number">0{{ producto.id }}</span>
+				</div>
+				<div class="product-info">
+					<p>{{ producto.categoria }}</p>
+					<h3>{{ producto.nombre }}</h3>
+					<span class="product-description">{{ producto.descripcion }}</span>
+					<div class="product-footer">
+						<strong>{{ producto.precio }}</strong>
+						<a href="#contacto" [attr.aria-label]="'Consultar ' + producto.nombre">Consultar <span aria-hidden="true">↗</span></a>
+					</div>
+				</div>
+			</article>
+		}
+	</div>
+</section>
+<p>productos works!</p>
